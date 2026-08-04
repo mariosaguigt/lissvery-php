@@ -32,7 +32,7 @@ require __DIR__ . '/includes/admin-header.php';
   <p>Todavía no hay pedidos registrados.</p>
 <?php else: ?>
   <table class="admin-table">
-    <thead><tr><th>#</th><th>Cliente</th><th>Total</th><th>Fecha</th><th>Estado</th></tr></thead>
+    <thead><tr><th>#</th><th>Cliente</th><th>Total</th><th>Fecha</th><th>Estado</th><th>Detalle</th></tr></thead>
     <tbody>
       <?php foreach ($pedidos as $p): ?>
         <tr>
@@ -50,6 +50,9 @@ require __DIR__ . '/includes/admin-header.php';
                 <option value="cancelado" <?= $p['estado'] === 'cancelado' ? 'selected' : '' ?>>Cancelado</option>
               </select>
             </form>
+          </td>
+          <td>
+            <a href="pedido-detalle.php?id=<?= (int) $p['id'] ?>" class="btn btn-outline">Ver detalle</a>
           </td>
         </tr>
       <?php endforeach; ?>
