@@ -1,0 +1,6 @@
+# Evita que se ejecuten archivos PHP dentro de esta carpeta,
+# aunque alguien lograra subir uno con otro nombre de extensión.
+<FilesMatch "\.(php|phtml|php\d)$">
+  Require all denied
+</FilesMatch>
+Options -Indexes
